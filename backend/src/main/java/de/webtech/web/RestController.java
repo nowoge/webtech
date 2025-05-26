@@ -3,6 +3,7 @@ package de.webtech.web;
 import de.webtech.Recipe;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Controller
 public class RestController {
 
+    @CrossOrigin(origins = {"https://frontend-webtech-yosh.onrender.com/", "http://localhost:5173"})
     @GetMapping(path = "/webtech")
     public ResponseEntity<Recipe> getRecipe() {
         List<String> ingredients = Arrays.asList("Kochsahne", "Kartoffel", "Käse", "Muskatnuss");
